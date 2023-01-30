@@ -9,8 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "expo": "~47.0.12",
+    "@react-native-community/hooks": "^2.8.1",
+    "expo": "^47.0.13",
     "expo-status-bar": "~1.4.2",
+    "expo-updates": "~0.15.6",
     "react": "18.1.0",
     "react-native": "0.70.5"
   },
