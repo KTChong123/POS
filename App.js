@@ -11,13 +11,16 @@ import {
   useDimensions,
   useDeviceOrientation,
 } from "@react-native-community/hooks";
+import { NavigationContainer } from "@react-navigation/native";
+import { HomeStack } from "./navigation/stack";
 
 export default function App() {
   console.log("App executed");
-
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app! Hello.</Text>
+      <NavigationContainer>
+        <HomeStack />
+      </NavigationContainer>
       <StatusBar style="auto" />
     </View>
   );
@@ -27,7 +30,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
