@@ -5,6 +5,7 @@ import ProductPage from "../screens/product-page";
 import ProfileDetailScreen from "../screens/profile/profile-details";
 import ProfileScreen from "../screens/profile/profile-screen";
 import { navOptions } from "./options";
+import { HomeTabs } from "./tab";
 
 const Stack = createStackNavigator();
 
@@ -12,7 +13,7 @@ export const HomeStack = () => {
   const navigation = useNavigation();
   return (
     <Stack.Navigator screenOptions={() => navOptions(navigation)}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home" component={HomeTabs} />
       <Stack.Screen name="Product" component={ProductPage} />
     </Stack.Navigator>
   );
