@@ -5,7 +5,7 @@ import {
   DrawerItemList,
 } from "@react-navigation/drawer";
 import { Image, SafeAreaView, View, StyleSheet, Linking } from "react-native";
-import { HomeStack, ProfileStack } from "./stack";
+import { ApiFetchStack, HomeStack, ProfileStack } from "./stack";
 
 const Drawer = createDrawerNavigator();
 
@@ -56,6 +56,14 @@ export const MyDrawer = () => {
           drawerIcon: () => (
             <MaterialCommunityIcons name="face-man-profile" size={22} />
           ),
+        }}
+      />
+      <Drawer.Screen
+        name="ApiFetchStack"
+        component={ApiFetchStack}
+        options={{
+          title: "ApiFetch",
+          drawerIcon: () => <Ionicons name="archive" size={22} />,
         }}
       />
     </Drawer.Navigator>
