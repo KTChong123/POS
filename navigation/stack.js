@@ -34,7 +34,7 @@ export const ApiFetchStack = () => {
   return (
     <Stack.Navigator screenOptions={() => navOptions(navigation)}>
       <Stack.Screen name="ApiFetch" component={ApiFetchScreen} />
-      <Stack.Screen name="Product" component={ApiProductPage} />
+      <Stack.Screen name="ApiProduct" component={ApiProductPage} />
     </Stack.Navigator>
   );
 };

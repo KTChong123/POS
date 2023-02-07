@@ -7,7 +7,7 @@ const ApiProductItem = ({ id, name, description, price }) => {
     <TouchableOpacity
       style={styles.card}
       onPress={() =>
-        navigation.navigate("Product", {
+        navigation.navigate("ApiProduct", {
           productId: id,
           name,
           description,
