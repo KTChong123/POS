@@ -48,6 +48,34 @@ const ApiProductPage = () => {
       );
   };
 
+  let updateOrderItem = (id, quantity, product, order) => {
+    fetch(`http://127.0.0.1:8000/api/update-order-item/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: id,
+        quantity: quantity,
+        product: product,
+        order: order,
+      }),
+    })
+      .then((res) => {
+        console.log(res.status);
+        console.log(res.headers);
+        return res.json();
+      })
+      .then(
+        (result) => {
+          console.log(result);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  };
+
   let deleteOrderItem = (id) => {
     fetch(`http://127.0.0.1:8000/api/delete-order-item/${id}`, {
       method: "DELETE",
@@ -76,6 +104,10 @@ const ApiProductPage = () => {
       <Button
         title="ADD TO CART"
         onPress={() => createOrderItem("1", productId, "102")}
+      />
+      <Button
+        title="UPDATE CART 340"
+        onPress={() => updateOrderItem("340", "3", productId, "102")}
       />
       <Button title="DELETE ITEM 341" onPress={() => deleteOrderItem("341")} />
     </View>
