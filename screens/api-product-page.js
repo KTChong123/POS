@@ -22,7 +22,7 @@ const ApiProductPage = () => {
   }, []);
 
   let createOrderItem = (quantity, product, order) => {
-    fetch("http://127.0.0.1:8000/api/create-order-item/", {
+    fetch("https://web-production-820e.up.railway.app/api/create-order-item/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,18 +49,21 @@ const ApiProductPage = () => {
   };
 
   let updateOrderItem = (id, quantity, product, order) => {
-    fetch(`http://127.0.0.1:8000/api/update-order-item/${id}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        id: id,
-        quantity: quantity,
-        product: product,
-        order: order,
-      }),
-    })
+    fetch(
+      `https://web-production-820e.up.railway.app/api/update-order-item/${id}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id: id,
+          quantity: quantity,
+          product: product,
+          order: order,
+        }),
+      }
+    )
       .then((res) => {
         console.log(res.status);
         console.log(res.headers);
@@ -77,9 +80,12 @@ const ApiProductPage = () => {
   };
 
   let deleteOrderItem = (id) => {
-    fetch(`http://127.0.0.1:8000/api/delete-order-item/${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://web-production-820e.up.railway.app/api/delete-order-item/${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => {
         console.log(res.status);
         console.log(res.headers);
