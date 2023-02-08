@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import ApiFetchScreen from "../screens/api-fetch-product";
 import ApiProductPage from "../screens/api-product-page";
+import TableSelectScreen from "../screens/table-select";
 import HomeScreen from "../screens/home-screen";
 import ProductPage from "../screens/product-page";
 import ProfileDetailScreen from "../screens/profile/profile-details";
@@ -35,6 +36,14 @@ export const ApiFetchStack = () => {
     <Stack.Navigator screenOptions={() => navOptions(navigation)}>
       <Stack.Screen name="ApiFetch" component={ApiFetchScreen} />
       <Stack.Screen name="ApiProduct" component={ApiProductPage} />
+    </Stack.Navigator>
+  );
+};
+export const TableSelectStack = () => {
+  const navigation = useNavigation();
+  return (
+    <Stack.Navigator screenOptions={() => navOptions(navigation)}>
+      <Stack.Screen name="Select Table" component={TableSelectScreen} />
     </Stack.Navigator>
   );
 };

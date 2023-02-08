@@ -5,7 +5,12 @@ import {
   DrawerItemList,
 } from "@react-navigation/drawer";
 import { Image, SafeAreaView, View, StyleSheet, Linking } from "react-native";
-import { ApiFetchStack, HomeStack, ProfileStack } from "./stack";
+import {
+  ApiFetchStack,
+  HomeStack,
+  ProfileStack,
+  TableSelectStack,
+} from "./stack";
 
 const Drawer = createDrawerNavigator();
 
@@ -64,6 +69,14 @@ export const MyDrawer = () => {
         options={{
           title: "ApiFetch",
           drawerIcon: () => <Ionicons name="archive" size={22} />,
+        }}
+      />
+      <Drawer.Screen
+        name="TableSelectStack"
+        component={TableSelectStack}
+        options={{
+          title: "TableSelect",
+          drawerIcon: () => <Ionicons name="locate" size={22} />,
         }}
       />
     </Drawer.Navigator>
