@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ApiFetchScreen from "../screens/api-fetch-product";
 import ApiProductPage from "../screens/api-product-page";
 import TableSelectScreen from "../screens/table-select";
+import MenuPage from "../screens/menu-page";
+import CategoryPage from "../screens/category-page";
 import HomeScreen from "../screens/home-screen";
 import ProductPage from "../screens/product-page";
 import ProfileDetailScreen from "../screens/profile/profile-details";
@@ -44,6 +46,8 @@ export const TableSelectStack = () => {
   return (
     <Stack.Navigator screenOptions={() => navOptions(navigation)}>
       <Stack.Screen name="Select Table" component={TableSelectScreen} />
+      <Stack.Screen name="Category" component={CategoryPage} />
+      <Stack.Screen name="Menu" component={MenuPage} />
     </Stack.Navigator>
   );
 };

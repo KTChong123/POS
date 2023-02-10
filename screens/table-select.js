@@ -8,37 +8,31 @@ import {
   ScrollView,
 } from "react-native";
 
-var tableloop = [];
-
-for (let i = 1; i <= 30; i++) {
-  tableloop.push(
-    <View key={i}>
-      <View
-        style={{
-          width: 100,
-          height: 100,
-          padding: 5,
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            flex: 1,
-            backgroundColor: "#e6e6fa",
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 100,
-          }}
-        >
-          <Text>Table</Text>
-          <Text>{i}</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-}
-
 const TableSelectScreen = () => {
   const navigation = useNavigation();
+
+  var tableloop = [];
+
+  for (let i = 1; i <= 30; i++) {
+    tableloop.push(
+      <View key={i}>
+        <View style={styles.table}>
+          <TouchableOpacity
+            style={styles.tableContain}
+            onPress={() =>
+              navigation.navigate("Category", {
+                table: i,
+              })
+            }
+          >
+            <Text>Table</Text>
+            <Text>{i}</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.screen}>
       <Text>This is table select screen</Text>
@@ -59,6 +53,18 @@ const styles = StyleSheet.create({
     padding: 0,
     flexDirection: "row",
     flexWrap: "wrap",
+  },
+  table: {
+    width: 100,
+    height: 100,
+    padding: 5,
+  },
+  tableContain: {
+    flex: 1,
+    backgroundColor: "#e6e6fa",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 100,
   },
 });
 

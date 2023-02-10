@@ -75,7 +75,7 @@ export const MyDrawer = () => {
         name="TableSelectStack"
         component={TableSelectStack}
         options={{
-          title: "TableSelect",
+          title: "Select Table",
           drawerIcon: () => <Ionicons name="locate" size={22} />,
         }}
       />
