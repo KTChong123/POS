@@ -51,7 +51,7 @@ const ApiProductList = ({ table, category }) => {
     }
     console.log(response);
     return (
-      <View style={{ height: "95%" }}>
+      <View style={{ height: "83%" }}>
         <Text style={{ alignSelf: "center", color: "green" }}>
           Status: API Called
         </Text>

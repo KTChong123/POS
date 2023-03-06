@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { HeaderBackButton } from "@react-navigation/elements";
 import ApiProductList from "../components/product/api-product-list";
 import ApiProductCategoryList from "../components/product/api-product-category-list";
+import CartScreen from "./cart-screen";
 
 const CategoryPage = () => {
   const route = useRoute();
@@ -106,7 +107,16 @@ const CategoryPage = () => {
   return (
     <View style={styles.screen}>
       <Text style={{ fontSize: 20 }}>This is the category page</Text>
-      <Text style={{ fontSize: 20 }}>Table: {table}</Text>
+      <CartScreen table={table} />
+      <View style={{ flexDirection: "row" }}>
+        <Text style={{ flex: 2, fontSize: 20, textAlign: "left" }}>
+          Table: {table}
+        </Text>
+        <Text style={{ flex: 4, fontSize: 20, textAlign: "right" }}>
+          Item: 2 Total: RM14.50
+        </Text>
+      </View>
+
       <Button
         title="ADD TO CART"
         onPress={() => createOrderItem("1", productId, "102")}

@@ -4,6 +4,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { HeaderBackButton } from "@react-navigation/elements";
 import ApiProductList from "../components/product/api-product-list";
 import ApiProductCategoryList from "../components/product/api-product-category-list";
+import CartScreen from "./cart-screen";
 
 const MenuPage = () => {
   const route = useRoute();
@@ -106,6 +107,7 @@ const MenuPage = () => {
   return (
     <View style={styles.screen}>
       <Text style={{ fontSize: 20 }}>This is the menu page</Text>
+      <CartScreen table={table} />
       <Text style={{ fontSize: 20 }}>Table: {table}</Text>
       <Button
         title="ADD TO CART"

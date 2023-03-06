@@ -46,6 +46,14 @@ export const MyDrawer = () => {
       screenOptions={{ headerShown: false }}
     >
       <Drawer.Screen
+        name="TableSelectStack"
+        component={TableSelectStack}
+        options={{
+          title: "Select Table",
+          drawerIcon: () => <Ionicons name="home" size={22} />,
+        }}
+      />
+      <Drawer.Screen
         name="HomeStack"
         component={HomeStack}
         options={{
@@ -69,14 +77,6 @@ export const MyDrawer = () => {
         options={{
           title: "ApiFetch",
           drawerIcon: () => <Ionicons name="archive" size={22} />,
-        }}
-      />
-      <Drawer.Screen
-        name="TableSelectStack"
-        component={TableSelectStack}
-        options={{
-          title: "Select Table",
-          drawerIcon: () => <Ionicons name="locate" size={22} />,
         }}
       />
     </Drawer.Navigator>

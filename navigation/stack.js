@@ -14,6 +14,16 @@ import { HomeTabs } from "./tab";
 
 const Stack = createStackNavigator();
 
+export const TableSelectStack = () => {
+  const navigation = useNavigation();
+  return (
+    <Stack.Navigator screenOptions={() => navOptions(navigation)}>
+      <Stack.Screen name="Select Table" component={TableSelectScreen} />
+      <Stack.Screen name="Category" component={CategoryPage} />
+      <Stack.Screen name="Menu" component={MenuPage} />
+    </Stack.Navigator>
+  );
+};
 export const HomeStack = () => {
   const navigation = useNavigation();
   return (
@@ -38,16 +48,6 @@ export const ApiFetchStack = () => {
     <Stack.Navigator screenOptions={() => navOptions(navigation)}>
       <Stack.Screen name="ApiFetch" component={ApiFetchScreen} />
       <Stack.Screen name="ApiProduct" component={ApiProductPage} />
-    </Stack.Navigator>
-  );
-};
-export const TableSelectStack = () => {
-  const navigation = useNavigation();
-  return (
-    <Stack.Navigator screenOptions={() => navOptions(navigation)}>
-      <Stack.Screen name="Select Table" component={TableSelectScreen} />
-      <Stack.Screen name="Category" component={CategoryPage} />
-      <Stack.Screen name="Menu" component={MenuPage} />
     </Stack.Navigator>
   );
 };
